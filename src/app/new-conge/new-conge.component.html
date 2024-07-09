@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="card col-md-6 offset-3 mt-3">
+    <div class="card-header "><strong>Nouveau Congé</strong></div>
+    <div class="card-body ">
+      <form [formGroup]="newCongeFormGroup" (ngSubmit)="handleSaveConge()">
+        <div class="mb-3">
+          <label class="form-label">Id Employe: </label>
+          <input type="text" formControlName="idEmploye" class="form-control">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Date Debut : </label>
+          <input type="date" formControlName="dateDebut" class="form-control">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Date Fin : </label>
+          <input type="date" formControlName="dateFin" class="form-control">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Statut : </label>
+          <input type="text" formControlName="statut" class="form-control">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Type De Conge :</label>
+          <input type="text" formControlName="typeDeConge" class="form-control">
+        </div>
+        <div class="text-center">
+        <button [disabled]="!newCongeFormGroup.valid" class="btn btn-success">Save Conge</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+

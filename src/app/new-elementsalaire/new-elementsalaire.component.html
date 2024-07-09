@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="card col-md-6 offset-3 mt-3">
+    <div class="card-header "><strong>Nouveau Element de salaire</strong></div>
+    <div class="card-body ">
+      <form [formGroup]="newElementFormGroup" (ngSubmit)="handleSaveElement()">
+        <div class="mb-3">
+          <label class="form-label">id Fiche de paie</label>
+          <input type="number" formControlName="idFiche" class="form-control">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Montant</label>
+          <input type="number" formControlName="montant" class="form-control">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Type : </label>
+          <input type="text" formControlName="TypeE" class="form-control">
+        </div>
+        <div class="text-center">
+          <button [disabled]="!newElementFormGroup.valid" class="btn btn-success text-center">Save Element de salaire</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

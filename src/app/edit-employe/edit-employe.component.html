@@ -1,0 +1,73 @@
+<div class="container">
+  <div class="card shadow col-md-6 offset-md-3 mt-5">
+    <div class="card-header bg-primary text-white">Edit Employe</div>
+    <div class="card-body">
+      <form [formGroup]="editEmployeFormGroup" (ngSubmit)="handleEditEmploye()">
+        <div class="form-group">
+          <label class="font-weight-bold">Id Employe:</label>
+          <input type="text" formControlName="idEmploye" class="form-control">
+          <span class="text-danger"
+                *ngIf="editEmployeFormGroup.controls['idEmploye'].touched
+                        && editEmployeFormGroup.controls['idEmploye'].errors
+                        && editEmployeFormGroup.controls['idEmploye'].errors!['required']">
+              Nom is Required
+            </span>
+        </div>
+        <div class="form-group">
+          <label class="font-weight-bold">Nom:</label>
+          <input type="text" formControlName="nom" class="form-control">
+          <span class="text-danger"
+                *ngIf="editEmployeFormGroup.controls['nom'].touched
+                        && editEmployeFormGroup.controls['nom'].errors
+                        && editEmployeFormGroup.controls['nom'].errors!['required']">
+              Nom is Required
+            </span>
+        </div>
+        <div class="form-group">
+          <label class="font-weight-bold">Prénom:</label>
+          <input type="text" formControlName="prenom" class="form-control">
+          <span class="text-danger"
+                *ngIf="editEmployeFormGroup.controls['prenom'].touched
+                        && editEmployeFormGroup.controls['prenom'].errors
+                        && editEmployeFormGroup.controls['prenom'].errors!['required']">
+              Prénom is Required
+            </span>
+        </div>
+        <div class="form-group">
+          <label class="font-weight-bold">Departement:</label>
+          <input type="text" formControlName="departement" class="form-control">
+          <span class="text-danger"
+                *ngIf="editEmployeFormGroup.controls['departement'].touched
+                        && editEmployeFormGroup.controls['departement'].errors
+                        && editEmployeFormGroup.controls['departement'].errors!['required']">
+              Departement is Required
+            </span>
+        </div>
+        <div class="form-group">
+          <label class="font-weight-bold">Poste</label>
+          <input type="text" formControlName="poste" class="form-control">
+          <span class="text-danger"
+                *ngIf="editEmployeFormGroup.controls['poste'].touched
+                        && editEmployeFormGroup.controls['poste'].errors
+                        && editEmployeFormGroup.controls['poste'].errors!['required']">
+              Poste is Required
+            </span>
+        </div>
+        <div class="form-group">
+          <label class="font-weight-bold">Date d'embauche:</label>
+          <input type="text" formControlName="date_embauche" class="form-control">
+          <span class="text-danger"
+                *ngIf="editEmployeFormGroup.controls['date_embauche'].touched
+                        && editEmployeFormGroup.controls['date_embauche'].errors
+                        && editEmployeFormGroup.controls['date_embauche'].errors!['required']">
+              Date d'embauche is Required
+            </span>
+        </div>
+        <br>
+        <div class="d-grid">
+          <button class="btn btn-primary btn-lg rounded-end">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,44 @@
+<div class="container mt-2">
+  <div class="card">
+    <div class="card-header">Fiche de paie</div>
+    <div class="card-body" >
+      <table class="table">
+        <thead>
+        <tr>
+
+          <th>Id Fiche</th>
+          <th>Periode</th>
+          <th>Montant brut</th>
+          <th>Montant Net</th>
+          <th>Details deductions </th>
+          <th>Action</th>
+
+        </tr>
+        </thead>
+
+        <tbody *ngFor="let fp of ficheP|async">
+        <tr>
+          <td>{{fp.idFiche}}</td>
+          <td>{{fp.periode}}</td>
+          <td>{{fp.montant_brut}}</td>
+          <td>{{fp.montant_net}}</td>
+          <td>{{fp.details_deductions}}</td>
+          <td *ngIf="authService.roles.includes('ADMIN')">
+            <button class="btn btn-light btn-action me-4" routerLink="/admin/editfichedepaie"><i class="bi bi-pencil-fill"></i></button>
+            <button (click)="handleDeletefichedepais(fp)" class="btn btn-danger btn-action me-4"><i class="bi bi-trash-fill"></i></button>
+          </td>
+        </tr>
+        </tbody>
+
+      </table>
+    </div>
+  </div>
+  <ng-template #failureOrLoading>
+    <ng-container *ngIf="errorMessage;else loading">
+      <div class="text-bg-danger">{{errorMessage}}</div>
+    </ng-container>
+    <ng-template #loading>
+      Loading .....
+    </ng-template>
+  </ng-template>
+</div>

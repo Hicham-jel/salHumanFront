@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="card col-md-6 offset-3 mt-3">
+    <div class="card-header "><strong>Nouvelle Fiche de Paie</strong></div>
+    <div class="card-body ">
+      <form [formGroup]="newFicheFormGroup" (ngSubmit)="handleSaveFiche()">
+        <div class="mb-3">
+          <label class="form-label">Id Employe : </label>
+          <input type="number" formControlName="idEmploye" class="form-control">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Periode : </label>
+          <input type="date" formControlName="periode" class="form-control">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">montant brut:</label>
+          <input type="number" formControlName="montant_brut" class="form-control">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Montant net : </label>
+          <input type="number" formControlName="montant_net" class="form-control">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Details deductions:</label>
+          <input type="number" formControlName="details_deductions" class="form-control">
+        </div>
+        <div class="text-center">
+          <button [disabled]="!newFicheFormGroup.valid" class="btn btn-success text-center">Save Fiche de paie</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

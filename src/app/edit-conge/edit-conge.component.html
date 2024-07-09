@@ -1,0 +1,63 @@
+<div class="container">
+  <div class="card shadow col-md-6 offset-md-3 mt-5">
+    <div class="card-header bg-primary text-white">Edit Congé</div>
+    <div class="card-body">
+      <form [formGroup]="editCongeFormGroup" (ngSubmit)="handleEditEmploye()">
+        <div class="form-group">
+          <label class="font-weight-bold">Id Conge:</label>
+          <input type="text" formControlName="idConge" class="form-control">
+          <span class="text-danger"
+                *ngIf="editCongeFormGroup.controls['idConge'].touched
+                        && editCongeFormGroup.controls['idConge'].errors
+                        && editCongeFormGroup.controls['idConge'].errors!['required']">
+              ID is Required
+            </span>
+        </div>
+        <div class="form-group">
+          <label class="font-weight-bold">Date debut: </label>
+          <input type="date" formControlName="dateDebut" class="form-control">
+          <span class="text-danger"
+                *ngIf="editCongeFormGroup.controls['dateDebut'].touched
+                        && editCongeFormGroup.controls['dateDebut'].errors
+                        && editCongeFormGroup.controls['dateDebut'].errors!['required']">
+              date Debut is Required
+            </span>
+        </div>
+        <div class="form-group">
+          <label class="font-weight-bold">Date fin:</label>
+          <input type="date" formControlName="dateFin" class="form-control">
+          <span class="text-danger"
+                *ngIf="editCongeFormGroup.controls['dateFin'].touched
+                        && editCongeFormGroup.controls['dateFin'].errors
+                        && editCongeFormGroup.controls['dateFin'].errors!['required']">
+              date Fin is Required
+            </span>
+        </div>
+        <div class="form-group">
+          <label class="font-weight-bold">Type de conge</label>
+          <input type="text" formControlName="typeDeConge" class="form-control">
+          <span class="text-danger"
+                *ngIf="editCongeFormGroup.controls['typeDeConge'].touched
+                        && editCongeFormGroup.controls['typeDeConge'].errors
+                        && editCongeFormGroup.controls['typeDeConge'].errors!['required']">
+              type De Conge is Required
+            </span>
+        </div>
+        <div class="form-group">
+          <label class="font-weight-bold">Statut :</label>
+          <input type="text" formControlName="statut" class="form-control">
+          <span class="text-danger"
+                *ngIf="editCongeFormGroup.controls['statut'].touched
+                        && editCongeFormGroup.controls['statut'].errors
+                        && editCongeFormGroup.controls['statut'].errors!['required']">
+              Statut is Required
+            </span>
+        </div>
+        <br>
+        <div class="d-grid text-center">
+          <button class="btn btn-primary btn-lg rounded-end">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

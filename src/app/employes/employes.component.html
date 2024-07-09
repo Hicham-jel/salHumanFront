@@ -1,0 +1,49 @@
+
+<div class="container mt-2">
+  <ng-container *ngIf="employes|async as listCustomers;else failureOrLoading">
+    <div class="card">
+      <div class="card-header"><strong>Employes</strong></div>
+      <div class="card-body" >
+        <div *ngIf="searchFormGroup">
+          <form [formGroup]="searchFormGroup" (ngSubmit)="handleSearchEmploye()">
+            <div class="input-group">
+              <label class="input-group-text"><strong>Keyword : </strong></label>
+              <input type="text" formControlName="keyword" class="form-control">
+              <button class="btn btn-info">
+                <i class="bi bi-search"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+      <table class="table">
+        <thead>
+        <tr>
+        <th>ID</th><th>Nom</th><th>Prenom</th><th>Departement</th><th>Poste</th>
+        </tr>
+        </thead>
+        <tbody *ngFor="let e of employes|async">
+        <tr>
+        <td>{{e.idEmploye}}</td>
+        <td>{{e.nom}}</td>
+        <td>{{e.prenom}}</td>
+        <td>{{e.departement}}</td>
+        <td>{{e.poste}}</td>
+          <td *ngIf="authService.roles.includes('ADMIN')">
+            <button class="btn btn-light btn-action me-4" routerLink="/admin/edit-employe/{{e.idEmploye}}"><i class="bi bi-pencil-fill"></i></button>
+            <button (click)="handleDeleteEmploye(e)" class="btn btn-danger btn-action me-4"><i class="bi bi-trash-fill"></i></button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  </ng-container>
+  <ng-template #failureOrLoading>
+    <ng-container *ngIf="errorMessage;else loading">
+      <div class="text-bg-danger">{{errorMessage}}</div>
+    </ng-container>
+    <ng-template #loading>
+      Loading .....
+    </ng-template>
+  </ng-template>
+</div>

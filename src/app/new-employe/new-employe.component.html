@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="card col-md-6 offset-3 mt-3">
+    <div class="card-header "><strong>Nouveau Employe</strong></div>
+      <div class="card-body ">
+        <form [formGroup]="newEmployeFormGroup" (ngSubmit)="handleSaveEmploye()">
+          <div class="mb-3">
+            <label class="form-label">Nom : </label>
+            <input type="text" formControlName="nom" class="form-control">
+          </div>
+            <div class="mb-3">
+            <label class="form-label">Prenom : </label>
+            <input type="text" formControlName="prenom" class="form-control">
+            </div>
+              <div class="mb-3">
+            <label class="form-label">Departement : </label>
+            <input type="text" formControlName="departement" class="form-control">
+              </div>
+                <div class="mb-3">
+            <label class="form-label">Poste : </label>
+            <input type="text" formControlName="poste" class="form-control">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Date d'embauche :</label>
+            <input type="date" formControlName="date_embauche" class="form-control">
+          </div>
+          <div class="text-center">
+          <button [disabled]="!newEmployeFormGroup.valid" class="btn btn-success text-center">Save Employe</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>

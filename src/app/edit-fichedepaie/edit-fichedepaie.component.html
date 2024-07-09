@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="card shadow col-md-6 offset-md-3 mt-5">
+    <div class="card-header bg-primary text-white">Edit Fiche de paie</div>
+    <div class="card-body">
+      <form [formGroup]="editFichedePaieFormGroup" (ngSubmit)="handleEditFicheDePaie()">
+        <div class="form-group">
+          <label class="font-weight-bold">Periode </label>
+          <input type="date" formControlName="periode" class="form-control">
+          <span class="text-danger"
+                *ngIf="editFichedePaieFormGroup.controls['periode'].touched
+                        && editFichedePaieFormGroup.controls['periode'].errors
+                        && editFichedePaieFormGroup.controls['periode'].errors!['required']">
+              Periode is Required
+            </span>
+        </div>
+        <div class="form-group">
+          <label class="font-weight-bold">Montant brut:</label>
+          <input type="date" formControlName="montant_brut" class="form-control">
+          <span class="text-danger"
+                *ngIf="editFichedePaieFormGroup.controls['montant_brut'].touched
+                        && editFichedePaieFormGroup.controls['montant_brut'].errors
+                        && editFichedePaieFormGroup.controls['montant_brut'].errors!['required']">
+              Montant brut is Required
+            </span>
+        </div>
+        <div class="form-group">
+          <label class="font-weight-bold">Montant net</label>
+          <input type="text" formControlName="montant_net" class="form-control">
+          <span class="text-danger"
+                *ngIf="editFichedePaieFormGroup.controls['montant_net'].touched
+                        && editFichedePaieFormGroup.controls['montant_net'].errors
+                        && editFichedePaieFormGroup.controls['montant_net'].errors!['required']">
+              Montant net is Required
+            </span>
+        </div>
+        <div class="form-group">
+          <label class="font-weight-bold">Details deductions :</label>
+          <input type="text" formControlName="details_deductions" class="form-control">
+          <span class="text-danger"
+                *ngIf="editFichedePaieFormGroup.controls['details_deductions'].touched
+                        && editFichedePaieFormGroup.controls['details_deductions'].errors
+                        && editFichedePaieFormGroup.controls['details_deductions'].errors!['required']">
+              Details deductions is Required
+            </span>
+        </div>
+        <br>
+        <div class="d-grid text-center">
+          <button class="btn btn-primary btn-lg rounded-end">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

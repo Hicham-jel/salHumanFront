@@ -1,0 +1,12 @@
+.btn-custom {
+  background-color: #7de3c8; /* Vert */
+  color: white; /* Couleur du texte */
+}
+.card-header {
+  background-color:  #563d7c;
+  color: white;
+}
+.input-group-text{
+  background-color:  #563d7c;
+  color: white;
+}

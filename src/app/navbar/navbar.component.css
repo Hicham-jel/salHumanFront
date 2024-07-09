@@ -1,0 +1,34 @@
+.custom-navbar {
+  background-color: #563d7c;
+  color: white;
+}
+
+.custom-navbar .navbar-brand {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.custom-navbar .navbar-nav .nav-link {
+  color: #ffffff;
+  margin-right: 1rem;
+}
+
+.custom-navbar .navbar-nav .nav-link.active {
+  background-color: #ffffff;
+  color: #563d7c;
+  border-radius: 0.5rem;
+}
+
+.custom-navbar .dropdown-menu {
+  background-color: #ffffff;
+  color: #563d7c;
+}
+
+.custom-navbar .dropdown-menu .dropdown-item {
+  color: #563d7c;
+}
+
+.custom-navbar .dropdown-menu .dropdown-item:hover {
+  background-color: #563d7c;
+  color: #ffffff;
+}
